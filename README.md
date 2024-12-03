@@ -5,6 +5,12 @@
 YOLO11のオブジェクト認識、ポーズ認識、セグメンテーションのモデルを Module-LLM(ax630c)のNPUで動かすために、
 axmodelへの変換を行います。
 
+# 注意点
+・UltralyticsのYOLO11は、デフォルトはopset19だが、pulsar2が対応していないので、opset≦18を指定する。Pulsar2で変換するときに、Splitのオペランドでエラーが発生します。<br>
+![image](https://github.com/user-attachments/assets/cb086375-6049-4f68-83bf-02ea5c56dd6f)
+
+・Pulsar2はver 3.2-patch1-temp-vlm以降のバージョンにする。ver 3.2はShapeの形状不一致のエラーが発生します。<br>
+![image](https://github.com/user-attachments/assets/a6c9e084-b394-4731-ab3a-cf86cb3d5554)
 
 ## pulsar2のインストール
 
