@@ -53,7 +53,7 @@ pip install ultralytics
 
 
 
-## axモデルへの変換
+## axモデルへの変換1
 
 このリポジトリをダウンロードし、pythonスクリプトを実行します。
 
@@ -86,6 +86,15 @@ YOLO11-poseのm/s/nサイズをダウンロードします。
 $ python yolo11-pose_download.py
 $ python yolo11-pose_cut-onnx.py
 ```
+### 補足
+
+モデルの最終段のカットを行う目的は、モデルを量子化すると整数精度に低下するのですが、
+後処理ステップを量子化をしない浮動小数点精度で処理することで、不必要な精度低下を防ぐためです。
+
+![image](https://github.com/user-attachments/assets/dcea7bfb-8b66-4508-a94c-16e28aefa9fc)
+https://x.com/qqc1989/status/1859293298877399322
+
+## axモデルへの変換2
 
 Pulsar2がインストールされている、Dockerを起動します。
 
