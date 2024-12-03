@@ -87,41 +87,32 @@ Pulsar2がインストールされている、Dockerを起動します。
 $ sudo docker run -it --net host --rm -v $PWD:/data pulsar2:temp-58aa62e4
 ```
 
+Pulsar2のbuildコマンドで、onnxモデルをModule-LLM(ax630c)のNPUに対応するaxモデルに変換します。
 
 ```
 pulsar2 build --input model/yolo11m-cut.onnx --output_dir output --config config/yolo11-config.json --target_hardware AX620E
 cp output/compiled.axmodel model/yolo11m.axmodel
-
 pulsar2 build --input model/yolo11s-cut.onnx --output_dir output --config config/yolo11-config.json --target_hardware AX620E
 cp output/compiled.axmodel model/yolo11s.axmodel
-
 pulsar2 build --input model/yolo11n-cut.onnx --output_dir output --config config/yolo11-config.json --target_hardware AX620E
 cp output/compiled.axmodel model/yolo11n.axmodel
 
 pulsar2 build --input model/yolo11m-pose-cut.onnx --output_dir output --config config/yolo11-pose_config.json --target_hardware AX620E
 cp output/compiled.axmodel model/yolo11m-pose.axmodel
-
 pulsar2 build --input model/yolo11s-pose-cut.onnx --output_dir output --config config/yolo11-pose_config.json --target_hardware AX620E
 cp output/compiled.axmodel model/yolo11s-pose.axmodel
-
 pulsar2 build --input model/yolo11n-pose-cut.onnx --output_dir output --config config/yolo11-pose_config.json --target_hardware AX620E
 cp output/compiled.axmodel model/yolo11n-pose.axmodel
 
-
 pulsar2 build --input model/yolo11m-seg-cut.onnx --output_dir output --config config/yolo11-seg_config.json --target_hardware AX620E
 cp output/compiled.axmodel model/yolo11m-seg.axmodel
-
 pulsar2 build --input model/yolo11s-seg-cut.onnx --output_dir output --config config/yolo11-seg_config.json --target_hardware AX620E
 cp output/compiled.axmodel model/yolo11s-seg.axmodel
-
 pulsar2 build --input model/yolo11n-seg-cut.onnx --output_dir output --config config/yolo11-seg_config.json --target_hardware AX620E
 cp output/compiled.axmodel model/yolo11n-seg.axmodel
-
-
-
-
-
 ```
+
+モデルが生成できていることを確認します。
 
 ```
 $ ls model
