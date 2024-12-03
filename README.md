@@ -140,15 +140,9 @@ cp output/compiled.axmodel model/yolo11n-seg.axmodel
 モデルが生成できていることを確認します。<br>
 
 ```
-$ ls model
-app.log                yolo11m-seg.onnx       yolo11n-pose.onnx     yolo11n.pt             yolo11s-seg.onnx
-yolo11m-cut.onnx       yolo11m-seg.pt         yolo11n-pose.pt       yolo11s-cut.onnx       yolo11s-seg.pt
-yolo11m-pose-cut.onnx  yolo11m.axmodel        yolo11n-seg-cut.onnx  yolo11s-pose-cut.onnx  yolo11s.axmodel
-yolo11m-pose.axmodel   yolo11m.onnx           yolo11n-seg.axmodel   yolo11s-pose.axmodel   yolo11s.onnx
-yolo11m-pose.onnx      yolo11m.pt             yolo11n-seg.onnx      yolo11s-pose.onnx      yolo11s.pt
-yolo11m-pose.pt        yolo11n-cut.onnx       yolo11n-seg.pt        yolo11s-pose.pt
-yolo11m-seg-cut.onnx   yolo11n-pose-cut.onnx  yolo11n.axmodel       yolo11s-seg-cut.onnx
-yolo11m-seg.axmodel    yolo11n-pose.axmodel   yolo11n.onnx          yolo11s-seg.axmodel
+$ ls model/*.axmodel
+model/yolo11n-pose.axmodel  model/yolo11n.axmodel       model/yolo11s-seg.axmodel
+model/yolo11n-seg.axmodel   model/yolo11s-pose.axmodel  model/yolo11s.axmodel
 ```
 
 
