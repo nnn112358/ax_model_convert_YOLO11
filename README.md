@@ -63,7 +63,7 @@ $ cd ax_model_convert_YOLO11
 ```
 
 
-オブジェクト認識モデルをUltralyticsからダウンロードして、モデルの最終段のカットを行います。
+オブジェクト認識モデルをUltralyticsからダウンロードして、モデルの最終段のカットを行います。<br>
 YOLO11のm/s/nサイズをダウンロードします。
 
 ```
@@ -71,7 +71,7 @@ $ python yolo11_download.py
 $ python yolo11_cut-onnx.py
 ```
 
-セグメンテーション認識モデルをUltralyticsからダウンロードして、モデルの最終段のカットを行います。
+セグメンテーション認識モデルをUltralyticsからダウンロードして、モデルの最終段のカットを行います。<br>
 YOLO11-segのm/s/nサイズをダウンロードします。
 
 ```
@@ -79,7 +79,7 @@ $ python yolo11-seg_download.py
 $ python yolo11-seg_cut-onnx.py
 ```
 
-ポーズ認識モデルをUltralyticsからダウンロードして、モデルの最終段のカットを行います。
+ポーズ認識モデルをUltralyticsからダウンロードして、モデルの最終段のカットを行います。<br>
 YOLO11-poseのm/s/nサイズをダウンロードします。
 
 ```
@@ -118,7 +118,7 @@ pulsar2 build --input model/yolo11n-seg-cut.onnx --output_dir output --config co
 cp output/compiled.axmodel model/yolo11n-seg.axmodel
 ```
 
-モデルが生成できていることを確認します。
+モデルが生成できていることを確認します。<br>
 
 ```
 $ ls model
@@ -132,7 +132,10 @@ yolo11m-seg-cut.onnx   yolo11n-pose-cut.onnx  yolo11n.axmodel       yolo11s-seg-
 yolo11m-seg.axmodel    yolo11n-pose.axmodel   yolo11n.onnx          yolo11s-seg.axmodel
 ```
 
-# 参考
+# 参考リンク
+@nnn112358/M5_LLM_Module_Report<br>
+https://github.com/nnn112358/M5_LLM_Module_Report<br>
 
-https://pulsar2-docs.readthedocs.io/en/latest/index.html
-
+pulsar2-docs<br>
+https://pulsar2-docs.readthedocs.io/en/latest/index.html<br>
+https://axera-pi-zero-docs-cn.readthedocs.io/zh-cn/latest/doc_guide_algorithm.html<br>
