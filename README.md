@@ -7,10 +7,12 @@ axmodelへの変換を行います。
 
 # 注意点
 ・UltralyticsのYOLO11は、デフォルトはopset19だが、pulsar2が対応していないので、opset≦18を指定する。Pulsar2で変換するときに、Splitのオペランドでエラーが発生します。<br>
-![image](https://github.com/user-attachments/assets/cb086375-6049-4f68-83bf-02ea5c56dd6f)
+<img src="https://github.com/user-attachments/assets/cb086375-6049-4f68-83bf-02ea5c56dd6f" width="500"><br>
 
-・Pulsar2はver 3.2-patch1-temp-vlm以降のバージョンにする。ver 3.2はShapeの形状不一致のエラーが発生します。<br>
-![image](https://github.com/user-attachments/assets/a6c9e084-b394-4731-ab3a-cf86cb3d5554)
+
+・Pulsar2はver 3.2-patch1-temp-vlm以降のバージョンにする。ver 3.2でYOLO11の変換を行うと、Shapeの形状不一致のエラーが発生します。<br>
+<img src="https://github.com/user-attachments/assets/a6c9e084-b394-4731-ab3a-cf86cb3d5554" width="500"><br>
+
 
 ## pulsar2のインストール
 
@@ -91,7 +93,8 @@ $ python yolo11-pose_cut-onnx.py
 モデルの最終段のカットを行う目的は、モデルを量子化すると整数精度に低下するのですが、
 後処理ステップを量子化をしない浮動小数点精度で処理することで、不必要な精度低下を防ぐためです。
 
-![image](https://github.com/user-attachments/assets/dcea7bfb-8b66-4508-a94c-16e28aefa9fc)
+<img src="https://github.com/user-attachments/assets/dcea7bfb-8b66-4508-a94c-16e28aefa9fc" width="500"><br>
+
 https://x.com/qqc1989/status/1859293298877399322
 
 ## axモデルへの変換2
