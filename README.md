@@ -56,19 +56,71 @@ $ git clone https://github.com/nnn112358/ax_model_convert_YOLO11
 $ cd ax_model_convert_YOLO11
 ```
 
+
+オブジェクト認識モデルをUltralyticsからダウンロードして、モデルの最終段のカットを行います。
+YOLO11のm/s/nサイズをダウンロードします。
+
 ```
 $ python yolo11_download.py
 $ python yolo11_cut-onnx.py
 ```
+
+セグメンテーション認識モデルをUltralyticsからダウンロードして、モデルの最終段のカットを行います。
+YOLO11-segのm/s/nサイズをダウンロードします。
 
 ```
 $ python yolo11-seg_download.py
 $ python yolo11-seg_cut-onnx.py
 ```
 
+ポーズ認識モデルをUltralyticsからダウンロードして、モデルの最終段のカットを行います。
+YOLO11-poseのm/s/nサイズをダウンロードします。
+
 ```
 $ python yolo11-pose_download.py
 $ python yolo11-pose_cut-onnx.py
+```
+
+Pulsar2がインストールされている、Dockerを起動します。
+
+```
+$ sudo docker run -it --net host --rm -v $PWD:/data pulsar2:temp-58aa62e4
+```
+
+
+```
+pulsar2 build --input model/yolo11m-cut.onnx --output_dir output --config config/yolo11-config.json --target_hardware AX620E
+cp output/compiled.axmodel model/yolo11m.axmodel
+
+pulsar2 build --input model/yolo11s-cut.onnx --output_dir output --config config/yolo11-config.json --target_hardware AX620E
+cp output/compiled.axmodel model/yolo11s.axmodel
+
+pulsar2 build --input model/yolo11n-cut.onnx --output_dir output --config config/yolo11-config.json --target_hardware AX620E
+cp output/compiled.axmodel model/yolo11n.axmodel
+
+pulsar2 build --input model/yolo11m-pose-cut.onnx --output_dir output --config config/yolo11-pose_config.json --target_hardware AX620E
+cp output/compiled.axmodel model/yolo11m-pose.axmodel
+
+pulsar2 build --input model/yolo11s-pose-cut.onnx --output_dir output --config config/yolo11-pose_config.json --target_hardware AX620E
+cp output/compiled.axmodel model/yolo11s-pose.axmodel
+
+pulsar2 build --input model/yolo11n-pose-cut.onnx --output_dir output --config config/yolo11-pose_config.json --target_hardware AX620E
+cp output/compiled.axmodel model/yolo11n-pose.axmodel
+
+
+pulsar2 build --input model/yolo11m-seg-cut.onnx --output_dir output --config config/yolo11-seg_config.json --target_hardware AX620E
+cp output/compiled.axmodel model/yolo11m-seg.axmodel
+
+pulsar2 build --input model/yolo11s-seg-cut.onnx --output_dir output --config config/yolo11-seg_config.json --target_hardware AX620E
+cp output/compiled.axmodel model/yolo11s-seg.axmodel
+
+pulsar2 build --input model/yolo11n-seg-cut.onnx --output_dir output --config config/yolo11-seg_config.json --target_hardware AX620E
+cp output/compiled.axmodel model/yolo11n-seg.axmodel
+
+
+
+
+
 ```
 
 ```
