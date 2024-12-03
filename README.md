@@ -8,7 +8,7 @@ axmodelへの変換を行います。
 
 ## pulsar2のインストール
 
-Axera-Techの@qqc-sanが管理するGoogleDriveからax_pulsar2_3.2_patch1_temp_vlm.tar.gzをダウンロードしてきます。
+@qqc -sanが管理するGoogleDriveからax_pulsar2_3.2_patch1_temp_vlm.tar.gzをダウンロードしてきます。
 <https://drive.google.com/drive/folders/10rfQIAm5ktjJ1bRMsHbUanbAplIn3ium>
 
 dockerをインストールし、以下のコマンドでdockerを読み込みます。
