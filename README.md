@@ -72,6 +72,8 @@ YOLO11のm/s/nサイズをダウンロードします。
 $ python yolo11_download.py
 $ python yolo11_cut-onnx.py
 ```
+<img src="https://github.com/user-attachments/assets/2fda3d7e-709c-4f9b-94c1-8caa53b6ae37" width="300"><br>
+
 
 セグメンテーション認識モデルをUltralyticsからダウンロードして、モデルの最終段のカットを行います。<br>
 YOLO11-segのm/s/nサイズをダウンロードします。
@@ -80,6 +82,8 @@ YOLO11-segのm/s/nサイズをダウンロードします。
 $ python yolo11-seg_download.py
 $ python yolo11-seg_cut-onnx.py
 ```
+<img src="https://github.com/user-attachments/assets/d5d8fe37-71bf-489e-a41a-56fedca66dda" width="300"><br>
+
 
 ポーズ認識モデルをUltralyticsからダウンロードして、モデルの最終段のカットを行います。<br>
 YOLO11-poseのm/s/nサイズをダウンロードします。
@@ -88,10 +92,13 @@ YOLO11-poseのm/s/nサイズをダウンロードします。
 $ python yolo11-pose_download.py
 $ python yolo11-pose_cut-onnx.py
 ```
+<img src="https://github.com/user-attachments/assets/2f6199f8-1b7b-478f-be3a-c0657044e22e" width="300"><br>
+
+
 ### 補足
 
-モデルの最終段のカットを行う目的は、モデルを量子化すると整数精度に低下するのですが、
-後処理ステップを量子化をしない浮動小数点精度で処理することで、不必要な精度低下を防ぐためです。
+モデルの最終段のカットを行う目的は、モデルをNPUで実行するために量子化を行うと整数精度の処理になり精度が低下するのですが、
+モデルから最終段を削除し、最終段をCPUで演算することで浮動小数点精度で処理し、不必要な精度低下を防ぐためです。
 
 <img src="https://github.com/user-attachments/assets/dcea7bfb-8b66-4508-a94c-16e28aefa9fc" width="500"><br>
 
@@ -143,6 +150,10 @@ yolo11m-pose.pt        yolo11n-cut.onnx       yolo11n-seg.pt        yolo11s-pose
 yolo11m-seg-cut.onnx   yolo11n-pose-cut.onnx  yolo11n.axmodel       yolo11s-seg-cut.onnx
 yolo11m-seg.axmodel    yolo11n-pose.axmodel   yolo11n.onnx          yolo11s-seg.axmodel
 ```
+
+
+
+
 
 # 参考リンク
 @nnn112358/M5_LLM_Module_Report<br>
