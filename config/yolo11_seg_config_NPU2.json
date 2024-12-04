@@ -1,6 +1,6 @@
 {
   "model_type": "ONNX",
-  "npu_mode": "NPU1",
+  "npu_mode": "NPU2",
   "quant": {
     "input_configs": [
       {

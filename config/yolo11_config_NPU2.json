@@ -1,6 +1,6 @@
 {
   "model_type": "ONNX",
-  "npu_mode": "NPU1",
+  "npu_mode": "NPU2",
   "quant": {
     "input_configs": [
       {
@@ -26,23 +26,13 @@
   ],
   "output_processors": [
     {
+      "tensor_name": "/model.23/Concat_output_0",
+      "dst_perm": [0, 2, 3, 1]
+    },    {
       "tensor_name": "/model.23/Concat_1_output_0",
       "dst_perm": [0, 2, 3, 1]
     },    {
       "tensor_name": "/model.23/Concat_2_output_0",
-      "dst_perm": [0, 2, 3, 1]
-    },    {
-      "tensor_name": "/model.23/Concat_3_output_0",
-      "dst_perm": [0, 2, 3, 1]
-    },
-    {
-      "tensor_name": "/model.23/cv4.0/cv4.0.2/Conv_output_0",
-      "dst_perm": [0, 2, 3, 1]
-    },    {
-      "tensor_name": "/model.23/cv4.1/cv4.1.2/Conv_output_0",
-      "dst_perm": [0, 2, 3, 1]
-    },    {
-      "tensor_name": "/model.23/cv4.2/cv4.2.2/Conv_output_0",
       "dst_perm": [0, 2, 3, 1]
     }
   ],
