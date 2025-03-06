@@ -184,8 +184,8 @@ model/yolo11n-seg.axmodel   model/yolo11s-pose.axmodel  model/yolo11s.axmodel
 
 
 # 参考リンク
-@nnn112358/M5_LLM_Module_Report<br>
-https://github.com/nnn112358/M5_LLM_Module_Report<br>
+modulellm_maniax<br>
+https://booth.pm/ja/items/6642202<br>
 
 pulsar2-docs<br>
 https://pulsar2-docs.readthedocs.io/en/latest/index.html<br>
